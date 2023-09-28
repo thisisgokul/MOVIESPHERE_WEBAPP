@@ -1,0 +1,30 @@
+.backgroundStyle {
+    background-image: url("../assets/IN-en-20230821-popsignuptwoweeks-perspective_alpha_website_medium.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative; 
+  }
+  
+  .overlay {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.594);
+  }
+  
+  .container {
+    z-index: 1; 
+  }
+  .signup-form{
+    background-color: rgba(0, 0, 0, 0.603);
+    padding:  34px;
+  }
+  .signup-form label{
+    color: rgba(255, 255, 255, 0.733) !important;
+  }
