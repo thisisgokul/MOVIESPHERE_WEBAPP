@@ -7,6 +7,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 import "./auth.css";
 import axios from "axios";
+import OAuth from "../components/OAuth";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -84,7 +85,9 @@ const Login = () => {
                   </span>
                 </div>
               </Form>
+              <OAuth/>
             </div>
+           
           </Col>
         </Row>
       </Container>

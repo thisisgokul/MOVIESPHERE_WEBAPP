@@ -3,6 +3,13 @@ const jwt = require("jsonwebtoken");
 const dotenv = require('dotenv');
 const bcrypt = require('bcrypt');
 dotenv.config()
+
+const options = {
+  maxAge: 1000 * 60 * 60 * 24 * 30, 
+  httpOnly: true,
+  sameSite: 'Strict', 
+  secure: true
+};
 const signup = async (req, res) => {
     const { email, password, name } = req.body;
     try {
@@ -43,8 +50,29 @@ const login = async (req, res) => {
     }
   };
 
+  const google = async (req, res) => {
+    const { name, email } = req.body;
+  
+    try {
+      const existingUser = await User.findOne({ email });
+  
+      if (existingUser) {
+        const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, process.env.JWT_SECRET);
+        res.cookie('token', token, options).json(existingUser);
+      } else {
+        const userDoc = await User.create({
+          name,
+          email,
+        });
+        const token = jwt.sign({ email: userDoc.email, id: userDoc._id }, process.env.JWT_SECRET);
+        res.cookie('token', token, options).json(userDoc);
+      }
+    } catch (error) {
+      res.status(500).json({ error: 'An error occurred during login' });
+  };
+  }
 const logout = (req, res) => {
   res.clearCookie('token').status(200).json('Signout success!');
   };
 
-  module.exports={signup,login,logout}
+  module.exports={signup,login,logout,google}
