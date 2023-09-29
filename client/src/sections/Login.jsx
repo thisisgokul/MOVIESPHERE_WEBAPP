@@ -28,7 +28,7 @@ const Login = () => {
 
       dispatch(login(data));
       localStorage.setItem("userData", JSON.stringify(data));
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       console.error("Login error:", error);
     } finally {

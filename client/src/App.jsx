@@ -7,9 +7,10 @@ import { Route,Routes } from "react-router-dom";
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Signup/>}/>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/signup" element={<Signup/>}/>
       <Route path="/login" element={<Login/>}/>
-      <Route path="/Home" element={<Home/>}/>
+  
     </Routes>
   );
 };

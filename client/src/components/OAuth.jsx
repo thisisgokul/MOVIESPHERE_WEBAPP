@@ -28,7 +28,7 @@ const OAuth = () => {
             localStorage.setItem("userData", JSON.stringify(response.data));
     
             
-            navigate("/home");
+            navigate("/");
           })
           .catch((error) => {
             console.error("Error registering user", error);
