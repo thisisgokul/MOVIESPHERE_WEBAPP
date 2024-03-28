@@ -12,7 +12,7 @@ import NavbarComponent from "../components/NavbarComponent";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const API_KEY = "57d1f9b8dd0d56da487cfda0ff6fc323";
+const API_KEY = "";
 
 const Home = () => {
   const API_URL = "";
