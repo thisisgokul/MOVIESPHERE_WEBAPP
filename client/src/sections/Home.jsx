@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 const API_KEY = "57d1f9b8dd0d56da487cfda0ff6fc323";
 
 const Home = () => {
-  const API_URL = "https://api.themoviedb.org/3/";
+  const API_URL = "";
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
   const [displayMovies, setdisplayMovies] = useState([]);
   const [search, setSearch] = useState("");

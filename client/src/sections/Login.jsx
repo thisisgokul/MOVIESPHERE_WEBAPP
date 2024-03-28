@@ -81,7 +81,7 @@ const Login = () => {
                 <div className="text-white text-center mt-2">
                   New to MovieSphere?
                   <span>
-                    <Link to={"/"}>signup</Link>
+                    <Link to={"/signup"}>signup</Link>
                   </span>
                 </div>
               </Form>
